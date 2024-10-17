@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <limits>
+#include <limits>  // esta es la biblioteca que sera necesaria para los erros
 
 using namespace std;
 
@@ -33,18 +33,18 @@ struct Nota {
 };
 
 vector<Estudiante> estudiantes;
-vector<Cursos> cursos; // Cambiado a vector de Cursos
+vector<Cursos> cursos; 
 vector<Nota> notas;
 
 vector<vector<string>> departamentos = {
     {"Guatemala", "Guatemala", "Mixco", "Villa Nueva"},
-    {"Alta Verapaz", "Coban", "San Pedro Carchá", "Tucurú"},
+    {"Alta Verapaz", "Coban", "San Pedro Carcha", "Tucuru"},
     {"Baja Verapaz", "Salama", "San Miguel Chicaj", "Rabinal"},
     {"Chimaltenango", "Chimaltenango", "San José Poaquil", "Tecuaco"},
     {"Escuintla", "Escuintla", "Santa Lucia Cotzumalguapa", "La Democracia"},
     {"Santa Rosa", "Cuilapa", "Barberena", "San Juan Tecuaco"},
-    {"Solala", "Solala", "San José Chacaya", "Santa Catarina Palopo"},
-    {"Totonicapan", "Totonicapán", "San Francisco El Alto", "Momostenango"},
+    {"Solala", "Solala", "San Jose Chacaya", "Santa Catarina Palopo"},
+    {"Totonicapan", "Totonicapan", "San Francisco El Alto", "Momostenango"},
     {"Quetzaltenango", "Quetzaltenango", "Colomba", "San Carlos Sija"},
     {"San Marcos", "San Marcos", "Tecoanapa", "San Miguel Ixtahuacán"},
     {"Huehuetenango", "Huehuetenango", "Chiantla", "Cuilco"},
@@ -152,7 +152,7 @@ void mostrarDyM(Estudiante &nuevoEstudiante) {
 
             if (muniIndice > 0 && muniIndice < departamentos[dptoIndice - 1].size()) {
                 nuevoEstudiante.municipio = departamentos[dptoIndice - 1][muniIndice];
-                break; // Salir del bucle al ingresar correctamente
+                break; 
             } else {
                 cout << "Indice de municipio no válido.\n";
             }
@@ -215,7 +215,7 @@ void asignarNotas() {
     cin >> cursoIndice;
 
     if (cursoIndice < 1 || cursoIndice > cursos.size()) {
-        cout << "Curso no válido.\n";
+        cout << "Curso no valido.\n";
         return;
     }
 
@@ -227,7 +227,7 @@ void asignarNotas() {
     cout << "Ingrese nota parcial 2: ";
     cin >> nuevaNota.notaParcial2;
 
-    nuevaNota.notaFinal = (nuevaNota.notaParcial1 + nuevaNota.notaParcial2) / 2;
+    nuevaNota.notaFinal = (nuevaNota.notaParcial1 + nuevaNota.notaParcial2);
 
     nuevaNota.estado = (nuevaNota.notaFinal >= 60) ? "Aprobado" : "Reprobado";
 
